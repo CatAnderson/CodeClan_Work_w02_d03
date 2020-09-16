@@ -1,5 +1,5 @@
-from Drinks import *
-from Customer import *
+#from Drink import *
+#from Customer import *
 
 
 class Pub:
@@ -7,3 +7,7 @@ class Pub:
         self.name = name
         self.cash = cash_in_till  
 
+    def till_transaction(self, transaction_amount):
+        self.cash += transaction_amount
+
+    
