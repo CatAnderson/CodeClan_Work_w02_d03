@@ -13,7 +13,10 @@ class TestCustomer(unittest.TestCase):
     def test_customer_wallet_amount(self):
         self.assertEqual(50.00, self.customer_1.wallet)
 
-    def test_number_of_drinks_customer_has_in_hand(self):
+    def test_number_of_drinks_customer_has_in_hand__isnone(self):
         self.assertEqual(0, len(self.customer_1.drinks_in_hand))
 
-    
+    def test_number_of_drinks_customer_has_in_hand__added_drink(self):
+        self.drink_beer = Drink("Beer", 5.00)
+        self.customer_1.add_drink_to_customer_hand(self.drink_beer)
+        self.assertEqual(1, len(self.customer_1.drinks_in_hand))

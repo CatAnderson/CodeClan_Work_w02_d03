@@ -1,5 +1,5 @@
 from src.drink import Drink
-#from src.customer import Customer
+from src.customer import Customer
 
 
 class Pub:
