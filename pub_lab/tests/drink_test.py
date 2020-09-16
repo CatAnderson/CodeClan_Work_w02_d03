@@ -12,7 +12,21 @@ class TestDrink(unittest.TestCase):
         self.drink_coke = Drink("Coke", 0.75)
         self.drink_lemonade = Drink("Lemonade", 0.65)
 
-    #def number_of_available_drinks(self):
+    def test_drink_has_name_beer(self):
+        self.assertEqual("Beer", self.drink_beer.name)
+
+    def test_drink_has_name_wine(self):
+        self.assertEqual("Wine", self.drink_wine.name)
+
+    def test_drink_has_name_lemonade(self):
+        self.assertEqual("Lemonade", self.drink_lemonade.name)   
+
+    def test_drink_price_beer(self):
+        self.assertEqual(5.00, self.drink_beer.price)
+        
+
+    #def test_drink_list_length(self):
+    #    self.assertEqual(6, len(Drink.list_of_drinks))
 
 
 
