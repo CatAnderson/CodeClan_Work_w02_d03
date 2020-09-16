@@ -14,7 +14,7 @@ class TestPub(unittest.TestCase):
         self.drink_lemonade = Drink("Lemonade", 0.65)
         self.pub.menu_of_drinks = [
             self.drink_beer,
-
+            # put the other menu items in here
         ]
 
 
@@ -35,7 +35,7 @@ class TestPub(unittest.TestCase):
     def test_drink_has_been_removed_from_menu(self):
         self.pub.remove_drink(self.drink_beer)
         self.assertEqual(0, self.pub.drink_count())
-        
+
    
     # def test_drink_menu_length(self):
     #      self.assertEqual(6, len(self.drink.menu_of_drinks))
