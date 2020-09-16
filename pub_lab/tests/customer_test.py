@@ -14,6 +14,9 @@ class TestCustomer(unittest.TestCase):
     def test_customer_wallet_amount(self):
         self.assertEqual(50.00, self.customer_1.wallet)
 
+    def test_customer_age(self):
+        self.assertEqual(20, self.customer_1.age)
+        
     def test_number_of_drinks_customer_has_in_hand__isnone(self):
         self.assertEqual(0, len(self.customer_1.drinks_in_hand))
 
@@ -24,5 +27,5 @@ class TestCustomer(unittest.TestCase):
     def test_customer_has_paid_for_drink(self):
         self.customer_1.alter_customer_wallet_amount(self.drink_beer.price)
         self.assertEqual(45, self.customer_1.wallet)
-        
+
 
