@@ -25,4 +25,3 @@ class Pub:
         return len(self.menu_of_drinks)
 
     
-    

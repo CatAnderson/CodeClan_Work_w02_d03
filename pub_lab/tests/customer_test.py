@@ -28,4 +28,6 @@ class TestCustomer(unittest.TestCase):
         self.customer_1.alter_customer_wallet_amount(self.drink_beer.price)
         self.assertEqual(45, self.customer_1.wallet)
 
-
+    def test_check_customer_age(self):
+        self.assertEqual(True, self.customer_1.check_customer_age)
+        

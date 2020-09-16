@@ -6,12 +6,15 @@ from src.customer import Customer
 class TestPub(unittest.TestCase):
     def setUp(self):
         self.pub = Pub("Ox", 100.00)
+        self.customer_1 = Customer("David", 50.00)
+
         self.drink_beer = Drink("Beer", 5.00)
         self.drink_wine = Drink("Wine", 6.00)
         self.drink_gnt = Drink("Gin & Tonic", 7.50)
         self.drink_rum = Drink("Rum", 5.50)
         self.drink_coke = Drink("Coke", 0.75)
         self.drink_lemonade = Drink("Lemonade", 0.65)
+        
         self.pub.menu_of_drinks = [
             self.drink_beer,
             # put the other menu items in here
@@ -37,7 +40,6 @@ class TestPub(unittest.TestCase):
         self.assertEqual(0, self.pub.drink_count())
 
     def test_sell_drink_to_customer(self):
-        self.customer_1 = Customer("David", 50.00)
         self.customer_1.add_drink_to_customer_hand(self.drink_beer)
         self.customer_1.alter_customer_wallet_amount(self.drink_beer.price)
         self.pub.till_transaction(self.drink_beer.price)
@@ -46,8 +48,10 @@ class TestPub(unittest.TestCase):
         self.assertEqual(45, self.customer_1.wallet)
         self.assertEqual(105.00, self.pub.cash)
         self.assertEqual(0, self.pub.drink_count())
-        
 
+    def test_check_customer_age(self):
+        self.assertEqual(True, self.pub.check_customer_age())
+        
 
 
 
