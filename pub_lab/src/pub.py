@@ -21,8 +21,8 @@ class Pub:
         self.menu_of_drinks.remove(drink)
 
 
-
     def drink_count(self):
         return len(self.menu_of_drinks)
 
+    
     

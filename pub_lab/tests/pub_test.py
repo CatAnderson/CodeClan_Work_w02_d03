@@ -36,6 +36,21 @@ class TestPub(unittest.TestCase):
         self.pub.remove_drink(self.drink_beer)
         self.assertEqual(0, self.pub.drink_count())
 
-   
+    def test_sell_drink_to_customer(self):
+        self.customer_1 = Customer("David", 50.00)
+        self.customer_1.add_drink_to_customer_hand(self.drink_beer)
+        self.customer_1.alter_customer_wallet_amount(self.drink_beer.price)
+        self.pub.till_transaction(self.drink_beer.price)
+        self.pub.remove_drink(self.drink_beer)
+        self.assertEqual(1, len(self.customer_1.drinks_in_hand))
+        self.assertEqual(45, self.customer_1.wallet)
+        self.assertEqual(105.00, self.pub.cash)
+        self.assertEqual(0, self.pub.drink_count())
+        
+
+
+
+
+
     # def test_drink_menu_length(self):
     #      self.assertEqual(6, len(self.drink.menu_of_drinks))
