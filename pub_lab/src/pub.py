@@ -1,5 +1,5 @@
-from Drink import *
-#from Customer import *
+from src.drink import Drink
+#from src.customer import Customer
 
 
 class Pub:
@@ -8,15 +8,16 @@ class Pub:
         self.cash = cash_in_till
         self.menu_of_drinks = []  
         
-    def add_drink(self, name_of_drink):
-        self.menu_of_drinks.append(name_of_drink)
-        
 
     def till_transaction(self, transaction_amount):
         self.cash += transaction_amount
 
     
+    def add_drink(self, drink):
+        self.menu_of_drinks.append(drink)
+
+    
     def drink_count(self):
-        return len(self.list_of_drinks)
+        return len(self.menu_of_drinks)
 
     

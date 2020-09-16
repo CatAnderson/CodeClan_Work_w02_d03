@@ -6,6 +6,14 @@ from src.customer import Customer
 class TestPub(unittest.TestCase):
     def setUp(self):
         self.pub = Pub("Ox", 100.00)        #Pub("Ox", 100.00) must have capital P for Pub because its the class Pub.
+        self.drink_beer = Drink("Beer", 5.00)
+        self.drink_wine = Drink("Wine", 6.00)
+        self.drink_gnt = Drink("Gin & Tonic", 7.50)
+        self.drink_rum = Drink("Rum", 5.50)
+        self.drink_coke = Drink("Coke", 0.75)
+        self.drink_lemonade = Drink("Lemonade", 0.65)
+        self.pub.menu_of_drinks = [self.drink_beer]
+
 
     def test_pub_has_name(self):
         self.assertEqual("Ox", self.pub.name)
@@ -17,5 +25,9 @@ class TestPub(unittest.TestCase):
         self.pub.till_transaction(5)
         self.assertEqual(105.00, self.pub.cash)
 
-    def test_drink_menu_length(self):
-         self.assertEqual(6, len(self.drink.menu_of_drinks))
+    def test_drink_has_been_added_to_menu(self):
+        self.pub.add_drink(self.drink_beer)
+        self.assertEqual(2, self.pub.drink_count())
+   
+    # def test_drink_menu_length(self):
+    #      self.assertEqual(6, len(self.drink.menu_of_drinks))
