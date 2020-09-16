@@ -23,10 +23,6 @@ class TestDrink(unittest.TestCase):
 
     def test_drink_price_beer(self):
         self.assertEqual(5.00, self.drink_beer.price)
-        
-
-    #def test_drink_list_length(self):
-    #    self.assertEqual(6, len(Drink.list_of_drinks))
 
 
 

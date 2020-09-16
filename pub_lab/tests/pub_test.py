@@ -17,3 +17,5 @@ class TestPub(unittest.TestCase):
         self.pub.till_transaction(5)
         self.assertEqual(105.00, self.pub.cash)
 
+    def test_drink_menu_length(self):
+         self.assertEqual(6, len(self.drink.menu_of_drinks))
